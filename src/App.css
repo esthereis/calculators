@@ -22,7 +22,8 @@
 }
 
 .inputGroup {
-  width: 15rem;
+  width: 10rem;
+  height: 4rem;
 }
 
 .inputGroup input,
@@ -30,7 +31,12 @@
   width: 100%;
 
   box-sizing: border-box;
-  border: 1px solid grey;
+  border: 1px solid #47594f;
+  background-color: #39443e;
+
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: center;
 }
 
 .inputGroup label {
@@ -38,9 +44,30 @@
   display: inherit;
 }
 
+::placeholder {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
 .row {
   display: flex;
   flex-direction: row;
 
-  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.h2Title {
+  color: white;
+}
+
+#exchangeButton {
+  height: 2.5rem;
+  width: 2rem;
+
+  background-color: white;
+  border-style: none;
+}
+
+#exchangeIcon {
+  height: 1rem;
 }
