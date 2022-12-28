@@ -56,6 +56,13 @@
   margin-top: 2rem;
 }
 
+.rowReverse {
+  display: flex;
+  flex-direction: row-reverse;
+
+  margin-top: 2rem;
+}
+
 .h2Title {
   color: white;
 }

@@ -18,6 +18,7 @@ import { Input } from './components/Input';
 function App() {
   const [weeks, setWeeks] = useState();
   const [months, setMonths] = useState();
+  const [rowClassName, setRowClassName] = useState('row');
 
   function convertToMonths(weeks) {
     setWeeks(weeks);
@@ -41,14 +42,21 @@ function App() {
 
       <h2 className='h2Title'>Pregnancy Calculator</h2>
 
-      <div className='row'>
+      <div className={rowClassName}>
         <Input
           title='Weeks'
           value={weeks}
           onChange={event => convertToMonths(event.target.value)}
         />
 
-        <button id='exchangeButton'>
+        <button
+          id='exchangeButton'
+          onClick={() =>
+            rowClassName === 'row'
+              ? setRowClassName('rowReverse')
+              : setRowClassName('row')
+          }
+        >
           <img id='exchangeIcon' src={repeat} alt='Exchange' />
         </button>
 
