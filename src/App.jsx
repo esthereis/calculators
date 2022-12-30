@@ -1,7 +1,7 @@
 import './App.css';
 
 //react
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 //fonts
@@ -40,6 +40,11 @@ function App() {
         <style>{'body { background-color: #5F7368; }'}</style>
       </Helmet>
 
+      <nav className='sideBar'>
+        <h3>Menu</h3>
+        <p>Pregnancy Calculator</p>
+      </nav>
+
       <h2 className='h2Title'>Pregnancy Calculator</h2>
 
       <div className={rowClassName}>
@@ -50,14 +55,14 @@ function App() {
         />
 
         <button
-          id='exchangeButton'
+          class='exchangeButton'
           onClick={() =>
             rowClassName === 'row'
               ? setRowClassName('rowReverse')
               : setRowClassName('row')
           }
         >
-          <img id='exchangeIcon' src={repeat} alt='Exchange' />
+          <img class='exchangeIcon' src={repeat} alt='Exchange' />
         </button>
 
         <Input
