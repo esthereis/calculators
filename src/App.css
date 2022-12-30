@@ -76,7 +76,7 @@
   border-style: none;
 }
 
-.exchangeButton :hover {
+.exchangeButton:hover {
   background: #39443e;
 }
 
