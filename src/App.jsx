@@ -1,35 +1,21 @@
 import './App.css';
 
 //react
-import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 //fonts
-import './assets/fonts/Roboto-Regular.ttf';
 import './assets/fonts/Roboto-Bold.ttf';
+import './assets/fonts/Roboto-Regular.ttf';
 
 //icon
-import repeat from './assets/repeat.svg';
 
 //components
-import { Input } from './components/Input';
+import { PregnancyCalculator } from './components/calculatorComponents/PregnancyCalculator';
+import { NavMenu } from './components/NavMenu';
+import { TemperatureCalculator } from './components/calculatorComponents/TemperatureCalculator';
 
 //
 function App() {
-  const [weeks, setWeeks] = useState();
-  const [months, setMonths] = useState();
-  const [rowClassName, setRowClassName] = useState('row');
-
-  function convertToMonths(weeks) {
-    setWeeks(weeks);
-    setMonths(weeks / 4);
-  }
-
-  function convertToWeeks(months) {
-    setMonths(months);
-    setWeeks(months * 4);
-  }
-
   return (
     <div className='container'>
       <Helmet>
@@ -40,37 +26,10 @@ function App() {
         <style>{'body { background-color: #5F7368; }'}</style>
       </Helmet>
 
-      <nav className='sideBar'>
-        <h3>Menu</h3>
-        <p>Pregnancy Calculator</p>
-      </nav>
+      <NavMenu />
 
-      <h2 className='h2Title'>Pregnancy Calculator</h2>
-
-      <div className={rowClassName}>
-        <Input
-          title='Weeks'
-          value={weeks}
-          onChange={event => convertToMonths(event.target.value)}
-        />
-
-        <button
-          class='exchangeButton'
-          onClick={() =>
-            rowClassName === 'row'
-              ? setRowClassName('rowReverse')
-              : setRowClassName('row')
-          }
-        >
-          <img class='exchangeIcon' src={repeat} alt='Exchange' />
-        </button>
-
-        <Input
-          title='Months'
-          value={months}
-          onChange={event => convertToWeeks(event.target.value)}
-        />
-      </div>
+      <PregnancyCalculator />
+      <TemperatureCalculator />
     </div>
   );
 }
